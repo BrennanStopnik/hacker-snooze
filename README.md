@@ -22,8 +22,6 @@ on the page
 
 * Your site should look at least a little nicer than the real Hacker News (Bootstrap!)
 
-* Your site should be responsive (mobile friendly) and use at least one CSS media query to change style rules based on screen size
-
 * Your site should be hosted on GitHub pages
 
 ## Steps
@@ -165,6 +163,10 @@ The previous TODO statement would look more like this now:
 After doing this, you should have a working Hacker News clone!
 
 ## Stretch Goals
+
+#### Responsiveness 
+
+Your site should be responsive (mobile friendly) and use at least one CSS media query to change style rules based on screen size
 
 #### Comments
 
