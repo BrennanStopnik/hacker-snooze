@@ -17,12 +17,12 @@ let apiCall = async () => {
         let storyRes = await fetch(allStoriesID)
         let storyData = await storyRes.json();
         
-        let titleStory = document.createElement('div');
-        titleStory.setAttribute('id', 'parentDiv');
+        let storyTitle = document.createElement('div');
+        storyTitle.setAttribute('id', 'parentDiv');
         child = document.createElement('div');
         tag = document.createElement('a');
-        parent.appendChild(titleStory);
-        titleStory.appendChild(tag);
+        parent.appendChild(storyTitle);
+        storyTitle.appendChild(tag);
         parent.appendChild(child);
         tag.innerText = storyData.title
         tag.href = storyData.url;
