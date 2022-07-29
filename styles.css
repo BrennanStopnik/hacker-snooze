@@ -1,0 +1,17 @@
+body {
+    background-color: lightblue;
+}
+
+.nav {
+    border: 2px black solid;
+    padding: 4px;
+    margin: 4px;
+    background-color: palegoldenrod;
+}
+
+#label {
+    font-weight: bold;
+    padding: 6px;
+    margin-top: 2px;
+}
+
