@@ -1,40 +1,35 @@
 const body = document.querySelector("body");
-const parent = document.createElement("div");
-parent.className = "parent";
-const child = document.createElement("div");
-child.className = "child";
-
-let ordered = document.createElement("ol");
-let listItem = document.createElement("li");
-let titleStory = document.createElement("h4");
-let UserStory = document.createElement("p");
-let CommentsStory = document.createElement("p");
-let topStoriesArr = []
+let parent = document.createElement("div");
+let child = document.createElement("div");
 let topStoriesURL = `https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty`
-// let singleStories = `https: //hacker-news.firebaseio.com/v0/item/${data[i]}.json?print=pretty`
+parent.className = "parent";
+child.className = "child";
 
 parent.appendChild(child);
 body.appendChild(parent);
-child.appendChild(ordered);
-ordered.appendChild(listItem);
-listItem.className = "container-fluid";
-listItem.appendChild(titleStory);
-titleStory.className = "title-story";
-
-
 
 let apiCall = async () => {
     let res = await fetch(topStoriesURL);
     let data = await res.json();
-    // console.log(data);
-    for (let i = 0; i < 100; i++){
+    for (let i = 0; i < 150; i++){
         let storyID = data[i];
-        let storyRes = await fetch(`https://hacker-news.firebaseio.com/v0/item/${storyID}.json?print=pretty`)
+        let allStoriesID = `https://hacker-news.firebaseio.com/v0/item/${storyID}.json?print=pretty`
+        let storyRes = await fetch(allStoriesID)
         let storyData = await storyRes.json();
         
-        listItem.innerText = storyData.title;
+        let titleStory = document.createElement('div');
+        titleStory.setAttribute('id', 'parentDiv');
+        child = document.createElement('div');
+        tag = document.createElement('a');
+        parent.appendChild(titleStory);
+        titleStory.appendChild(tag);
+        parent.appendChild(child);
+        tag.innerText = storyData.title
+        tag.href = storyData.url;
+        child.innerText = `${storyData.descendants} comments | ${storyData.score} points | submitted by ${storyData.by}`
     }
 }
-
 apiCall();
+
+
 
